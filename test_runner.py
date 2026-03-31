@@ -313,7 +313,7 @@ def main():
     )
     parser.add_argument(
         "--only",
-        choices=["prereqs", "conversions", "kinematics", "reconstruction", "delta_r_filter", "feynrules", "mg5", "pythia", "sherpa", "llm", "pdg", "inspire", "units"],
+        choices=["prereqs", "conversions", "kinematics", "reconstruction", "delta_r_filter", "feynrules", "mg5", "pythia", "sherpa", "llm", "pdg", "inspire", "units", "dqm_data_access", "dqm_training", "dqm_deployment"],
         help="Run only tests for specified component (prereqs = prerequisites check only)"
     )
     parser.add_argument(
@@ -390,6 +390,18 @@ def main():
         "units": {
             "script": REPO_ROOT / "tools" / "units" / "tests" / "test_units.py",
             "description": "Unit conversion tools (natural units, metric prefix conversions)"
+        },
+        "dqm_data_access": {
+            "script": REPO_ROOT / "tools" / "dqm" / "tests" / "test_dqmio_reader.py",
+            "description": "DQM data access tools (histogram utils, normalization, JSONL round-trip)"
+        },
+        "dqm_training": {
+            "script": REPO_ROOT / "tools" / "dqm" / "tests" / "test_autoencoder_trainer.py",
+            "description": "DQM training tools (run cards, autoencoder training, model registry)"
+        },
+        "dqm_deployment": {
+            "script": REPO_ROOT / "tools" / "dqm" / "tests" / "test_onnx_inference.py",
+            "description": "DQM deployment tools (ONNX inference, anomaly scoring, alert generation)"
         },
     }
 

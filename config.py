@@ -32,3 +32,24 @@ wolframscript_path = "/path/to/wolframscript"
 # MadGraph5_aMC PATH.
 # Example: "/path/to/MG5_aMC_v3.6.6"
 mg5_path = "/path/to/MG5_aMC"
+
+# ============================================================ #
+# ================ ML4DQM Configuration ====================== #
+# ============================================================ #
+
+# Local directory for cached DQM data files.
+# Example: "/data/cms/dqm"
+dqm_data_dir = "/path/to/dqm/data"
+
+# CMS DQM GUI API endpoint.
+# For offline DQM: "https://cmsweb.cern.ch/dqm/offline"
+# For online DQM:  "https://cmsweb.cern.ch/dqm/online"
+dqm_api_url = "https://cmsweb.cern.ch/dqm/offline"
+
+# Directory for storing trained DQM ML model artifacts.
+# Example: "/data/cms/dqm/models"
+dqm_model_registry = "/path/to/dqm/models"
+
+# ONNX Runtime execution providers (comma-separated).
+# Options: "CPUExecutionProvider", "CUDAExecutionProvider"
+onnx_runtime_providers = "CPUExecutionProvider"

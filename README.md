@@ -35,6 +35,7 @@ The design and philosophy of HEPTAPOD are described in detail in the accompanyin
 - **Structured error handling and recovery** for long-running or branching executions
 - **LLM-compatible intermediate data formats** for inspection, validation, and debugging
 - **MCP server support** for exposing tools to Claude Code, Claude Desktop, OpenAI Codex, and other MCP clients
+- **ML4DQM tools** for incorporating machine learning models into CMS Data Quality Monitoring workflows (data access, training, real-time deployment)
 
 ---
 
@@ -50,13 +51,19 @@ heptapod/
 │   ├── analysis/                # Data conversion and kinematics tools
 │   ├── pdg/                     # PDG database queries (masses, widths, branching fractions)
 │   ├── inspire/                 # INSPIRE HEP literature search, citations, BibTeX
-│   └── units/                   # Natural units and metric prefix conversions
+│   ├── units/                   # Natural units and metric prefix conversions
+│   └── dqm/                     # ML4DQM: ML tools for CMS Data Quality Monitoring
+│       ├── data_access/         #   DQM data access (ROOT reader, API client)
+│       ├── training/            #   Model training (autoencoder, registry, run cards)
+│       ├── deployment/          #   Real-time deployment (ONNX inference, scoring, alerts)
+│       └── tests/               #   DQM tool tests
 ├── llm/                         # LLM utilities and Ollama integration
 │   ├── utils.py                 # Helper functions (get_ollama, etc.)
 │   └── test_ollama_*.py         # Ollama integration tests
 ├── examples/                    # Example workflows and demos
 │   ├── mcp/                     # MCP server scripts and documentation
 │   ├── hep_bsm_demo.py          # Main demo application
+│   ├── dqm_anomaly_demo.py      # DQM anomaly detection demo
 │   └── todos/                   # Example task lists
 ├── prompts/                     # System prompts for agent orchestration
 ├── config.py                    # Configuration (Ollama + external tool paths)

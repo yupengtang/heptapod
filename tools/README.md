@@ -600,3 +600,30 @@ result = tool.run(
 - `m1`, `m2`: Individual resonance masses
 - `Delta_m`: Mass difference |m1 - m2|
 - `m_avg`: Average mass (m1 + m2) / 2
+
+---
+
+## ML4DQM: Data Quality Monitoring Tools
+
+The `dqm/` subdirectory contains machine learning tools for CMS Data Quality Monitoring.  These tools enable agent-driven anomaly detection workflows spanning data access, model training, and real-time deployment.
+
+For full documentation, see [dqm/README.md](dqm/README.md).
+
+### Tool Summary
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| Data Access | `DQMIOReaderTool` | Read histograms from ROOT files via `uproot` |
+| Data Access | `DQMAPIClientTool` | Query CMS DQM GUI web API |
+| Training | `AutoencoderTrainerTool` | Train autoencoders (vanilla, conv, VAE) |
+| Training | `ModelRegistryTool` | Model versioning and artifact management |
+| Deployment | `ONNXInferenceTool` | ONNX model inference for anomaly scoring |
+| Deployment | `AnomalyScorerTool` | Threshold-based anomaly classification |
+| Deployment | `AlertManagerTool` | Report and alert generation |
+
+### Data Schemas
+
+- `dqmhist-1.0` — DQM histogram data (counts, edges, metadata)
+- `dqmscore-1.0` — Per-histogram anomaly scores
+- `dqmmodel-1.0` — Model artifact metadata
+- `dqm-training-1.0` — Training run card configuration
