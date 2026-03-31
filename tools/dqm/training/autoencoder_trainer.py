@@ -471,6 +471,7 @@ class AutoencoderTrainerTool(BaseTool):
         patience_counter = 0
         train_losses = []
         val_losses = []
+        best_state = None
 
         try:
             for epoch in range(card.training.epochs):
